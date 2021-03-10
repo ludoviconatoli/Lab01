@@ -3,7 +3,8 @@ package it.polito.tdp.parole;
 import it.polito.tdp.parole.model.Parole;
 
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -34,12 +35,21 @@ public class FXMLController {
 
     @FXML
     void doInsert(ActionEvent event) {
-    	// TODO
+    	
+    	this.txtResult.setText("");
+    	
+    	
+    	elenco.addParola(txtParola.getText());
+    	
+    	ArrayList<String> p = (ArrayList<String>) this.elenco.getElenco();
+    	for(String s: p)
+    		this.txtResult.appendText(s + "\n");
     }
 
     @FXML
     void doReset(ActionEvent event) {
-    	// TODO
+    	this.txtResult.setText("");
+    	this.txtParola.setText("");
     }
 
     @FXML
