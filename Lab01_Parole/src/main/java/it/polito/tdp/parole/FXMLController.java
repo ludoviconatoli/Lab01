@@ -50,6 +50,8 @@ public class FXMLController {
     void doReset(ActionEvent event) {
     	this.txtResult.setText("");
     	this.txtParola.setText("");
+    	
+    	this.elenco.reset();
     }
 
     @FXML
