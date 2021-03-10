@@ -2,7 +2,7 @@ package it.polito.tdp.parole.model;
 
 import java.util.*;
 
-public class Parole /*implements Comparable*/{
+public class Parole {
 		
 	ArrayList<String> parole;
 	public Parole() {
@@ -24,11 +24,11 @@ public class Parole /*implements Comparable*/{
 	public void reset() {
 		this.parole.clear();
 	}
-
-	/*@Override
-	public int compareTo(Object o) {
-		Parole p = (Parole) o;
-		return 0;
-	}*/
+	
+	public void cancellaParola(String word) {
+		for(String s : this.parole)
+			if(s.equals(word))
+				this.parole.remove(word);
+	}
 
 }
